@@ -77,20 +77,24 @@ ol {
   width: 225px;
 }
 
-.search-form__textfield:active {
-  border: 1px solid white;
+.search-form__label:has(.search-form__textfield:focus-visible) {
+  outline: 1px solid white;
+  outline-offset: 1px;
 }
 
 .search-form__textfield:focus {
   outline: none;
 }
 
-.search-form__textfield:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 1px;
+.search-form__textfield:active {
+  outline: 1px solid white;
+  border: none;
 }
 
 .search-form__checkbox-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
   margin-bottom: 5px;
 }
 
@@ -98,11 +102,8 @@ ol {
   width: fit-content;
 }
 
-.search-form__label:not(:last-child) {
-  margin-right: 12px;
-}
-
 .search-form__label:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -111,7 +112,7 @@ ol {
 }
 
 .search-form__label:focus-visible {
-  outline: 5px solid #fff;
+  outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
@@ -135,7 +136,6 @@ ol {
   height: 19px;
   border: 1px solid #fff;
   vertical-align: middle;
-  margin-right: -1px;
   position: relative;
   margin-bottom: 1px;
 }
@@ -195,10 +195,6 @@ ol {
   position: relative;
   display: flex;
   flex-direction: column;
-}
-
-.content__list::-webkit-scrollbar {
-  width: 0;
 }
 
 .content__list .preloader {
@@ -270,6 +266,7 @@ ol {
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 .content__video-card-description {
@@ -297,7 +294,7 @@ ol {
   width: 100%;
   text-decoration: none;
   color: #fff;
-  padding: 2px;
+  padding: 2px 3px;
 }
 
 .content__card-link_current {
@@ -307,6 +304,19 @@ ol {
 
 .content__card-link:hover {
   text-decoration: underline;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline-offset: -1px;
+  outline: 1px solid #fff;
 }
 
 .visually-hidden {
@@ -322,14 +332,9 @@ ol {
 .more-button {
   white-space: nowrap;
   padding: 5px 145.5px;
-  margin: 1px;
-}
-
-.more-button:focus {
-  outline: none;
 }
 
 .more-button:focus-visible {
-  outline-offset: 1px;
   outline: 1px solid #fff;
+  outline-offset: 1px;
 }
